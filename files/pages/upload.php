@@ -14,9 +14,6 @@ if (!session_id())
 
 <body>
     <main>
-
-
-
         <?php
         $target_dir = ""; // "../images/"; //"uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

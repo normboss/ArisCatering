@@ -16,6 +16,7 @@ $content2 = "";
 
 
 $menuArray = array(
+    array("image-name", ""),
     array("monday-date", ""),
     array("monday-heading", ""),
     array("monday-content", ""),

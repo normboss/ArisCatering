@@ -37,8 +37,7 @@ main {
 }
 
 main nav {
-  outline: 3px solid red;
-  background-color: #E8E2D9;
+  background-color: #e8e2d9;
   max-width: 1280pc;
   width: 100%;
   margin-top: 0;
@@ -49,7 +48,6 @@ main nav {
 }
 
 main nav ul {
-  outline: 3px solid red;
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -60,7 +58,7 @@ main nav ul li {
 }
 
 main .top-section {
-  background-color: #E8E2D9;
+  background-color: #e8e2d9;
   max-width: 1280pc;
   width: 100%;
   margin-top: 0;
@@ -472,7 +470,6 @@ main .menu-section {
 }
 
 main .menu-section .menu-header {
-  height: 76px;
   text-align: left;
   font: normal normal normal 60px/60px cursive;
   letter-spacing: 0px;
@@ -480,17 +477,32 @@ main .menu-section .menu-header {
   text-transform: uppercase;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 124px;
-  margin-bottom: 50px;
-  width: 178px;
-  height: 63px;
-  text-align: left;
+  margin: 0 auto;
+  width: 100%;
   font: normal normal normal 62px/60px CHAWP;
   font-family: CHAWP, cursive;
   letter-spacing: 0.62px;
   color: #ffffff;
   text-transform: uppercase;
   opacity: 1;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+main .menu-section .menu-header p {
+  display: flex;
+  align-items: flex-end;
+}
+
+main .menu-section .menu-header img {
+  width: 504px;
+  height: 398px;
+  box-shadow: 0px 15px 18px #00000099;
+  border: 12px solid #ffffff;
+  transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0);
+  position: relative;
+  top: 20px;
 }
 
 main .menu-section .menu-item {
@@ -525,7 +537,7 @@ main .menu-section .menu-item .day-header {
 main .menu-section .menu-item .meal-summary {
   margin-top: 5px;
   text-align: left;
-  font: normal normal normal 62px/60px CHAWP;
+  font: normal normal normal 60px/60px CHAWP;
   letter-spacing: 0.62px;
   color: #ffffff;
   text-transform: uppercase;
@@ -693,22 +705,22 @@ main .more-stuff .phone-number {
 }
 
 main .footer {
-  background: #0000004d 0% 0% no-repeat padding-box;
-  padding-top: 100px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  padding-top: 36px;
   padding-bottom: 40px;
   height: auto;
+  width: 90%;
 }
 
 main .footer .copy1 {
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   text-align: center;
   font: normal normal normal 20px/32px BioRhyme Expanded;
   letter-spacing: 0px;
   color: #f23816;
-  padding-bottom: 30px;
-  text-align: center;
-  font: normal normal normal 21px/30px BioRhyme Expanded;
+  padding-bottom: 20px;
+  font: normal normal normal 19px/30px BioRhyme Expanded;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;
@@ -716,16 +728,60 @@ main .footer .copy1 {
 
 main .footer .copy2 {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   text-align: center;
   font: normal normal normal 16px/28px BioRhyme Expanded;
   letter-spacing: 0px;
   color: #676462;
   opacity: 1;
+  opacity: 1;
+  font: normal normal normal 16px/27px BioRhyme Expanded;
+  letter-spacing: 0px;
+  color: #000000;
+}
+
+main .footer .phone-etc {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+main .footer .phone-etc .footer-phone-number {
   text-align: center;
-  font: normal normal normal 17px/27px BioRhyme Expanded;
+  font: normal normal bold 54px/49px Times New Roman;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;
+}
+
+main .footer .phone-etc img {
+  padding-left: 20px;
+}
+
+main .footer .alchemy {
+  margin: 0 auto;
+  width: 95%;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+}
+
+main .footer .alchemy p {
+  text-align: left;
+  font: normal normal normal 14px/49px Arial;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+main .footer .alchemy img {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  height: 18px;
+  width: 18px;
 }
 /*# sourceMappingURL=menu.css.map */

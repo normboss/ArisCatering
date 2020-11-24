@@ -14,10 +14,9 @@ main {
     justify-content: center;
     align-items: center;
 
-
     nav {
-        outline: 3px solid red;
-        background-color: #E8E2D9;
+        // outline: 3px solid red;
+        background-color: #e8e2d9;
         max-width: 1280pc;
         width: 100%;
         // min-width: 900px;
@@ -25,11 +24,10 @@ main {
         height: auto; //500px;
         // padding-bottom: 25px;
         margin-bottom: 2px;
-
         display: flex;
         justify-content: flex-end;
         ul {
-            outline: 3px solid red;
+            // outline: 3px solid red;
             display: flex;
             justify-content: flex-end;
             list-style: none;
@@ -42,7 +40,7 @@ main {
     .top-section {
         // outline: 3px solid blue;
         // margin: 0 auto;
-        background-color: #E8E2D9;
+        background-color: #e8e2d9;
         max-width: 1280pc;
         width: 100%;
         // min-width: 900px;
@@ -435,7 +433,7 @@ main {
 
         .menu-header {
             // outline: 3px solid red;
-            height: 76px;
+            // height: 76px;
             text-align: left;
             font: normal normal normal 60px/60px cursive;
             letter-spacing: 0px;
@@ -443,18 +441,39 @@ main {
             text-transform: uppercase;
             opacity: 1;
             margin: 0 auto;
-            margin-top: 124px;
-            margin-bottom: 50px;
+            // margin-top: 124px;
+            // margin-bottom: 50px;
 
-            width: 178px;
-            height: 63px;
-            text-align: left;
+            // width: 178px;
+            // height: 63px;
+            // text-align: left;
+            margin: 0 auto;
+            width: 100%;
             font: normal normal normal 62px/60px CHAWP;
             font-family: CHAWP, cursive;
             letter-spacing: 0.62px;
             color: #ffffff;
             text-transform: uppercase;
             opacity: 1;
+            // margin-top: 100px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+
+            p {
+                display: flex;
+                align-items: flex-end;
+            }
+
+            img {
+                width: 504px;
+                height: 398px;
+                box-shadow: 0px 15px 18px #00000099;
+                border: 12px solid #ffffff;
+                transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0);
+                position: relative;
+                top: 20px;
+            }
         }
 
         .menu-item {
@@ -504,7 +523,7 @@ main {
                 // outline: 3px solid red;
                 margin-top: 5px;
                 text-align: left;
-                font: normal normal normal 62px/60px CHAWP;
+                font: normal normal normal 60px/60px CHAWP;
                 letter-spacing: 0.62px;
                 color: #ffffff;
                 text-transform: uppercase;
@@ -674,43 +693,92 @@ main {
     }
 
     .footer {
-        background: #0000004d 0% 0% no-repeat padding-box;
-        padding-top: 100px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        padding-top: 36px;
         padding-bottom: 40px;
         height: auto;
+        width: 90%;
 
         .copy1 {
+            // outline: 3px solid red;
             margin: 0 auto;
-            width: 80%;
+            width: 100%;
             text-align: center;
             font: normal normal normal 20px/32px BioRhyme Expanded;
             letter-spacing: 0px;
             color: #f23816;
             // margin-bottom: 15px;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
 
             // width: 1174px;
             // height: 123px;
-            text-align: center;
-            font: normal normal normal 21px/30px BioRhyme Expanded;
+            // text-align: left;
+            font: normal normal normal 19px/30px BioRhyme Expanded;
             letter-spacing: 0px;
             color: #000000;
             opacity: 1;
         }
         .copy2 {
+            // outline: 3px solid red;
             margin: 0 auto;
-            width: 80%;
+            width: 90%;
             text-align: center;
             font: normal normal normal 16px/28px BioRhyme Expanded;
             letter-spacing: 0px;
             color: #676462;
             opacity: 1;
 
-            text-align: center;
-            font: normal normal normal 17px/27px BioRhyme Expanded;
+            opacity: 1;
+            font: normal normal normal 16px/27px BioRhyme Expanded;
             letter-spacing: 0px;
             color: #000000;
-            opacity: 1;
+        }
+
+        .phone-etc {
+            // outline: 3px solid red;
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+
+            .footer-phone-number {
+                text-align: center;
+                font: normal normal bold 54px/49px Times New Roman;
+                letter-spacing: 0px;
+                color: #000000;
+                opacity: 1;
+            }
+            img {
+                padding-left: 20px;
+            }
+        }
+
+        .alchemy {
+            // outline: 3px solid red;
+            margin: 0 auto;
+            width: 95%;
+            height: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 30px;
+
+            p {
+                text-align: left;
+                font: normal normal normal 14px/49px Arial;
+                letter-spacing: 0px;
+                color: #000000;
+                opacity: 1;
+
+            }
+            img {
+                background: #ffffff 0% 0% no-repeat padding-box;
+                opacity: 1;
+                height: 18px;
+                width: 18px;
+
+            }
         }
     }
 }

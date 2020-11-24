@@ -71,7 +71,9 @@
         <div class="menu-section">
 
             <div class="menu-header">
-                MENU:
+                <p>MENU:</p>
+                <!-- <img src="../images/image2.JPG" alt=""> -->
+                <img src="../images/<?php require '../resources/image-name.php' ?>" alt="">
             </div>
 
             <div class="menu-item">
@@ -142,21 +144,6 @@
                     <?php require '../resources/saturday-content.php';  ?>
                 </div>
             </div>
-            <div class="images">
-                <!-- <img id="tape1" src="../images/tape-cropped1-white-sm.png">
-                <img id="image2" src="../images/image2.JPG">
-
-                <img id="tape2" src="../images/tape-cropped1-white-sm.png">
-                <img id="image1" src="../images/image1.JPG">
-
-                <img id="tape3" src="../images/tape-cropped1-white-sm.png">
-                <img id="image3" src="../images/image3.png">
-
-                <div class="image1"></div>
-                <div class="image2"></div>
- -->
-                <img src="../images/composite-cropped.png">
-            </div>
 
         </div>
         <div class="more-stuff">
@@ -187,11 +174,21 @@
 
         <div class="footer">
             <p class="copy1">
-                All entrees of the freshest ingredients, cooked by Ari & packed in natural microwaveable containers, plus napkin & utensils.
+                All entrees of the freshest ingredients, cooked by Ari &&nbsp;packed in&nbsp;natural microwaveable containers, plus&nbsp;napkin & utensils.
             </p>
             <p class="copy2">
-                Everything prepared in a kitchen where dairy, gluten, eggs, peanuts and other allergens are used.
+                Everything prepared in a kitchen where dairy, gluten, eggs, peanuts and&nbsp;other allergens are used.
             </p>
+            <div class="phone-etc">
+                <div class="footer-phone-number"> 802-503-2124</div>
+                <img src="../images/facebook-icon.png" alt="Facebook icon">
+                <img src="../images/instagram-icon.png" alt="Instagram icon">
+            </div>
+
+            <div class="alchemy">
+                <img src="../images/copyright-icon.png">
+                <p>&nbsp;2020 Alchemy Web Designs</p>
+            </div>
         </div>
 
     </main>

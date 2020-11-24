@@ -62,7 +62,10 @@
             <div class="menu-section">
 
                 <div class="menu-header">
-                    MENU:
+                    <p>MENU:</p>
+                    <div class="upload-image">
+                        <input type="file" name="image-name" id="image-name">
+                    </div>
                 </div>
 
                 <div class="menu-item">

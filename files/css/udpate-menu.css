@@ -348,6 +348,7 @@ main .menu-section {
 }
 
 main .menu-section .menu-header {
+  outline: 3px solid red;
   height: 76px;
   text-align: left;
   font: normal normal normal 60px/60px cursive;
@@ -356,20 +357,61 @@ main .menu-section .menu-header {
   text-transform: uppercase;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 124px;
-  margin-bottom: 50px;
-  width: 178px;
-  height: 63px;
   text-align: left;
-  font: normal normal normal 62px/60px CHAWP;
+  width: 80%;
+  font: normal normal normal 60px/60px CHAWP;
   font-family: CHAWP, cursive;
   letter-spacing: 0.62px;
   color: #ffffff;
   text-transform: uppercase;
   opacity: 1;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+main .menu-section .menu-header p {
+  display: flex;
+  align-items: flex-end;
+}
+
+main .menu-section .menu-header .upload-image {
+  outline: 5px dashed red;
+  width: 60%;
+  text-align: left;
+  font: normal normal normal 43px/60px Itim;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: lowercase;
+  opacity: 1;
+  background-image: url("../images/blackboard2-cropped.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 38px;
+}
+
+main .menu-section .menu-header .upload-image input {
+  height: 50px;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 900px) {
+  main .menu-section .menu-header .upload-image {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .menu-section .menu-header .upload-image {
+    width: 95%;
+  }
 }
 
 main .menu-section .menu-item {
+  outline: 3px solid red;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 50px;
