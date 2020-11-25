@@ -15,7 +15,7 @@ if (!session_id())
 <body>
     <main>
         <?php
-        $target_dir = ""; // "../images/"; //"uploads/";
+        $target_dir = "../images/"; //"uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $alreadyExist = false;
@@ -83,7 +83,7 @@ if (!session_id())
         } else {
             echo '<img src="../images/' . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . '">';
             echo '<script>';
-            echo 'window.location.href = "demo.php";';
+            echo 'window.location.href = "demo2.php";';
             echo '</script>';
 }
         ?>

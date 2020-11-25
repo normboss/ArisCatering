@@ -146,52 +146,29 @@
             </div>
 
         </div>
-        <div class="more-stuff">
-            <div class="all-entrees">
-                All entrees
-            </div>
-            <div class="price">
-                <span class="dollar-sign">$</span>
-                <span class="dollar-amount">12</span>
-                <span class="cents-amount">99*</span>
-            </div>
-
-            <div class="happy">
-                *We’ll be happy to deliver 3 or more orders to your business for an additional $5.99
-
-            </div>
-
-            <div class="pleased">
-                Please call by 0:00 on lorem ipsum to place your order. Need a large order? Just ask! Give us a call to discuss your needs:
-            </div>
-
-            <div class="phone-number">
-                802-503-2124
-            </div>
-
-        </div>
-
-
-        <div class="footer">
-            <p class="copy1">
-                All entrees of the freshest ingredients, cooked by Ari &&nbsp;packed in&nbsp;natural microwaveable containers, plus&nbsp;napkin & utensils.
-            </p>
-            <p class="copy2">
-                Everything prepared in a kitchen where dairy, gluten, eggs, peanuts and&nbsp;other allergens are used.
-            </p>
-            <div class="phone-etc">
-                <div class="footer-phone-number"> 802-503-2124</div>
-                <img src="../images/facebook-icon.png" alt="Facebook icon">
-                <img src="../images/instagram-icon.png" alt="Instagram icon">
-            </div>
-
-            <div class="alchemy">
-                <img src="../images/copyright-icon.png">
-                <p>&nbsp;2020 Alchemy Web Designs</p>
-            </div>
-        </div>
-
     </main>
+
+
+    <div class="footer">
+        <p class="copy1">
+            All entrees of the freshest ingredients, cooked by Ari &&nbsp;packed in&nbsp;natural microwaveable containers, plus&nbsp;napkin & utensils.
+        </p>
+        <p class="copy2">
+            Everything prepared in a kitchen where dairy, gluten, eggs, peanuts and&nbsp;other allergens are used.
+        </p>
+        <div class="phone-etc">
+            <div class="footer-phone-number"> 802-503-2124</div>
+            <img src="../images/facebook-icon.png" alt="Facebook icon">
+            <img src="../images/instagram-icon.png" alt="Instagram icon">
+        </div>
+
+        <div class="alchemy">
+            <img src="../images/copyright-icon.png">
+            <p>&nbsp;2020 Alchemy Web Designs</p>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

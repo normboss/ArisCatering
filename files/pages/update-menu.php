@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <form action="update.php" method="post">
+        <form action="update.php" method="post" enctype="multipart/form-data">
 
             <div class="menu-section">
 
@@ -148,40 +148,8 @@
 
         </form>
 
-        <div class="more-stuff">
-            <div class="all-entrees">
-                All entrees
-            </div>
-            <div class="price">
-                <span class="dollar-sign">$</span>
-                <span class="dollar-amount">12</span>
-                <span class="cents-amount">99*</span>
-            </div>
+        
 
-            <div class="happy">
-                *We’ll be happy to deliver 3 or more orders to your business for an additional $5.99
-
-            </div>
-
-            <div class="pleased">
-                Please call by 0:00 on lorem ipsum to place your order. Need a large order? Just ask! Give us a call to discuss your needs:
-            </div>
-
-            <div class="phone-number">
-                802-503-2124
-            </div>
-
-        </div>
-
-
-        <div class="footer">
-            <!-- <p class="copy1">
-                All entrees of the freshest ingredients, cooked by Ari & packed in natural microwaveable containers, plus napkin & utensils.
-            </p>
-            <p class="copy2">
-                Everything prepared in a kitchen where dairy, gluten, eggs, peanuts and other allergens are used.
-            </p> -->
-        </div>
 
     </main>
 </body>

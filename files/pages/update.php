@@ -11,6 +11,71 @@ function generateFormToken($form)
     return $token;
 }
 
+function uploadImage()
+{
+    $target_dir = "../images/"; //"uploads/";
+    $target_file = $target_dir . basename($_FILES["image-name"]["name"]);
+    $uploadOk = 1;
+    $alreadyExist = false;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["image-name"]["tmp_name"]);
+        if ($check !== false) {
+            // echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        // echo "Sorry, file already exists.";
+        // $uploadOk = 0;
+        $alreadyExist = true;
+    }
+
+    // Check file size
+    // if ($_FILES["image-name"]["size"] > 500000) {
+    //     echo "Sorry, your file is too large.";
+    //     $uploadOk = 0;
+    // }
+
+    if (!$alreadyExist) {
+
+        // Allow certain file formats
+        if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif"
+        ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["image-name"]["tmp_name"], $target_file)) {
+                // echo "The file " . htmlspecialchars(basename($_FILES["image-name"]["name"])) . " has been uploaded.";
+                $fname = htmlspecialchars(basename($_FILES["image-name"]["name"]));
+                // echo '<img src="../img/' . $fname . '">';
+
+                unlink("../resources/image-name.php");
+                $myfile = fopen("../resources/image-name.php", "w") or die("Unable to open file!");
+                fwrite($myfile, $fname);
+                fclose($myfile);
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
+}
+
 $content1 = "";
 $content2 = "";
 
@@ -49,6 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // }
 
     for ($i = 0; $i < count($menuArray); $i++) {
+        if ($i == 0) {
+            uploadImage();
+        }
         $entry = $menuArray[$i];
         if (!empty($_POST[$entry[0]])) {
             $menuArray[$i][1] = $_POST[$entry[0]];
