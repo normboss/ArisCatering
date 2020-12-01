@@ -66,6 +66,10 @@
                     <div class="upload-image">
                         <input type="file" name="image-name" id="image-name">
                     </div>
+                    <div class="rotate-image">
+                        <input type="checkbox" id="rotate" name="rotate" value="rotate-image">
+                        <label for="rotate">Rotate the Image</label>
+                    </div>
                 </div>
 
                 <div class="menu-item">
@@ -148,7 +152,7 @@
 
         </form>
 
-        
+
 
 
     </main>

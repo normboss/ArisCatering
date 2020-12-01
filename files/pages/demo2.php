@@ -10,7 +10,8 @@
 <body>
 
     <main>
-    <img src="../images/<?php require '../includes/image-name.php' ?>" alt="">
+    <!-- <img src="../images/<?php require '../includes/image-name.php' ?>" alt=""> -->
+    <img src="../images/resizedImage.jpg" alt="">
     </main>
     
 </body>

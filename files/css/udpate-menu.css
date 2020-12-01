@@ -349,7 +349,6 @@ main .menu-section {
 
 main .menu-section .menu-header {
   outline: 3px solid red;
-  height: 76px;
   text-align: left;
   font: normal normal normal 60px/60px cursive;
   letter-spacing: 0px;
@@ -366,20 +365,17 @@ main .menu-section .menu-header {
   text-transform: uppercase;
   opacity: 1;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
   position: relative;
   margin-top: 100px;
   margin-bottom: 50px;
 }
 
-main .menu-section .menu-header p {
-  display: flex;
-  align-items: flex-end;
-}
-
 main .menu-section .menu-header .upload-image {
   outline: 5px dashed red;
-  width: 60%;
+  width: 80%;
   text-align: left;
   font: normal normal normal 43px/60px Itim;
   letter-spacing: 0px;
@@ -390,7 +386,6 @@ main .menu-section .menu-header .upload-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin-left: 38px;
 }
 
 main .menu-section .menu-header .upload-image input {
@@ -408,6 +403,21 @@ main .menu-section .menu-header .upload-image input {
   main .menu-section .menu-header .upload-image {
     width: 95%;
   }
+}
+
+main .menu-section .menu-header .rotate-image {
+  text-align: left;
+  font: normal normal normal 43px/60px Itim;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: lowercase;
+  opacity: 1;
+  font-size: 30px;
+}
+
+main .menu-section .menu-header .rotate-image input {
+  height: 20px;
+  width: 20px;
 }
 
 main .menu-section .menu-item {

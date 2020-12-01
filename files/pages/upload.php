@@ -15,6 +15,33 @@ if (!session_id())
 <body>
     <main>
         <?php
+
+        function resizeImage($filename)
+        {
+            // Get new sizes
+            list($width, $height) = getimagesize($filename);
+            $aspect = $width / $height;
+            $newwidth = 300;
+            $newheight = $newwidth / $aspect;
+
+            // Load
+            $dest = imagecreatetruecolor($newwidth, $newheight);
+            $source = imagecreatefromjpeg($filename);
+
+            if ( $aspect > 1.0 ) {
+                $source = imagerotate($source, -90, 0);
+            }
+
+            // Resize
+            imagecopyresized($dest, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+
+            // Output
+            // imagejpeg($dest, "resized.jpg");
+            imagejpeg($dest, "../images/resizedImage.jpg");
+        }
+
+
         $target_dir = "../images/"; //"uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
@@ -46,7 +73,8 @@ if (!session_id())
         //     $uploadOk = 0;
         // }
 
-        if (!$alreadyExist) {
+        if ( true ) {
+        // if (!$alreadyExist) {
 
             // Allow certain file formats
             if (
@@ -72,23 +100,25 @@ if (!session_id())
                     fwrite($myfile, $fname);
                     fclose($myfile);
 
+                    resizeImage($target_file);
+
+                    // echo '<img src="../images/' . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . '">';
                     echo '<script>';
-                    echo 'window.location.href = "demo.php";';
+                    echo 'window.location.href = "demo2.php";';
                     echo '</script>';
-                                
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
         } else {
-            echo '<img src="../images/' . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . '">';
+            // echo '<img src="../images/' . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . '">';
             echo '<script>';
             echo 'window.location.href = "demo2.php";';
             echo '</script>';
-}
+        }
         ?>
 
-
+        <h1>THE END</h1>
     </main>
 
 </body>

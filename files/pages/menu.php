@@ -72,8 +72,10 @@
 
             <div class="menu-header">
                 <p>MENU:</p>
-                <!-- <img src="../images/image2.JPG" alt=""> -->
-                <img src="../images/<?php require '../resources/image-name.php' ?>" alt="">
+                <img src="../images/resizedImage.jpg" alt="">
+                <!-- <img src="../images/
+                    <?php // require '../resources/image-name.php' ?>" alt=""> 
+                -->
             </div>
 
             <div class="menu-item">
@@ -87,17 +89,24 @@
                     <?php require '../resources/monday-content.php';  ?>
                 </div>
             </div>
+
             <div class="menu-item">
                 <div id="tuesday" class="day-header">
                     <?php require '../resources/tuesday-date.php';  ?>
                 </div>
                 <div class="meal-summary">
-                    <?php require '../resources/tuesday-heading.php';  ?>
-                </div>
-                <div class="meal-content">
-                    <?php require '../resources/tuesday-content.php';  ?>
+                    <div class="meal-summary">
+                        <div class="meal-summary">
+
+                            <?php require '../resources/tuesday-heading.php';  ?>
+                        </div>
+                        <div class="meal-content">
+                            <?php require '../resources/tuesday-content.php';  ?>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="menu-item">
                 <div id="wednesday" class="day-header">
                     <?php require '../resources/wednesday-date.php';  ?>
@@ -158,8 +167,10 @@
         </p>
         <div class="phone-etc">
             <div class="footer-phone-number"> 802-503-2124</div>
-            <img src="../images/facebook-icon.png" alt="Facebook icon">
-            <img src="../images/instagram-icon.png" alt="Instagram icon">
+            <div class="footer-images">
+                <img src="../images/facebook-icon.png" alt="Facebook icon">
+                <img src="../images/instagram-icon.png" alt="Instagram icon">
+            </div>
         </div>
 
         <div class="alchemy">

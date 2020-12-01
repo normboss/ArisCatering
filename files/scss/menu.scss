@@ -457,6 +457,12 @@ main {
             opacity: 1;
             // margin-top: 100px;
             display: flex;
+            @include max-width-mixin(800px) {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0;
+                margin-bottom: 50px;
+            }
             justify-content: space-around;
             position: relative;
 
@@ -466,7 +472,7 @@ main {
             }
 
             img {
-                width: 504px;
+                // width: 504px;
                 // height: 398px;
                 width: 50%;
                 box-shadow: 0px 15px 18px #00000099;
@@ -474,6 +480,11 @@ main {
                 transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0);
                 position: relative;
                 top: 20px;
+                @include max-width-mixin(800px) {
+                    // display: none;
+                    top: 0;
+                    width: 80%;
+                }
             }
         }
 
@@ -604,22 +615,49 @@ main {
     }
 
     .phone-etc {
+
         // outline: 3px solid red;
         width: 50%;
         margin: 0 auto;
         margin-top: 40px;
         display: flex;
         justify-content: center;
+        @include max-width-mixin(800px) {
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+            margin-top: 15px;
+        }
 
         .footer-phone-number {
+            // outline: 3px solid red;
             text-align: center;
             font: normal normal bold 54px/49px Times New Roman;
             letter-spacing: 0px;
             color: #000000;
             opacity: 1;
+            text-decoration: none;
+            @include max-width-mixin(800px) {
+                width: 100%;
+                padding: 0;
+                margin: 0 auto;
+                // width: 50%;
+                align-self: center;
+            }
         }
-        img {
-            padding-left: 20px;
+        .footer-images {
+            display: flex;
+            flex-direction: row;
+            img {
+                padding-left: 20px;
+                @include max-width-mixin(800px) {
+                    padding: 0;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    width: 45%;
+                }
+            }
         }
     }
 

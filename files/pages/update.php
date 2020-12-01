@@ -20,16 +20,20 @@ function uploadImage()
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     // Check if image file is a actual image or fake image
-    if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["image-name"]["tmp_name"]);
-        if ($check !== false) {
-            // echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
+    // if (isset($_POST["submit"])) {
+    // if (false) {
+    $check = getimagesize($_FILES["image-name"]["tmp_name"]);
+    if ($check !== false) {
+        // echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        echo '<script>';
+        echo 'window.location.href = "image-too-large.php"';
+        echo '</script>';
+        $uploadOk = 0;
     }
+    // }
 
     // Check if file already exists
     if (file_exists($target_file)) {
@@ -42,9 +46,13 @@ function uploadImage()
     // if ($_FILES["image-name"]["size"] > 500000) {
     //     echo "Sorry, your file is too large.";
     //     $uploadOk = 0;
+    //     echo '<script>';
+    //     echo 'window.location.href = "image-too-large.php"';
+    //     echo '</script>';
     // }
 
-    if (!$alreadyExist) {
+    if (true) {
+        // if (!$alreadyExist) {
 
         // Allow certain file formats
         if (
@@ -71,9 +79,60 @@ function uploadImage()
                 fclose($myfile);
             } else {
                 echo "Sorry, there was an error uploading your file.";
+                echo '<script>';
+                echo 'window.location.href = "image-too-large.php"';
+                echo '</script>';
             }
         }
     }
+    return $target_file;
+}
+
+function resizeImage($filename, $rotateImage)
+{
+    // Get new sizes
+    list($width, $height) = getimagesize($filename);
+    if ($width == 0 || $height == 0) {
+        return;
+    }
+
+    $newWidth = 600;
+    if ($newWidth > $width) {
+        $newWidth = $width;
+    }
+    $aspect = $width / $height;
+    $newHeight = $newWidth / $aspect;
+
+    // Load
+    if ($rotateImage) {
+        $dest = imagecreatetruecolor($newHeight, $newWidth);
+    } else {
+        $dest = imagecreatetruecolor($newWidth, $newHeight);
+    }
+    $source = imagecreatefromjpeg($filename);
+
+    // if ($aspect > 1.0) {
+    if ($rotateImage) {
+        $source = imagerotate($source, -90, 0);
+    }
+
+    // Resize
+    // if ( $rotateImage ) {
+    //     imagecopyresized($dest, $source, 0, 0, 0, 0, $newHeight, $newWidth, $width, $height);
+    // } else {
+    // imagecopyresized($dest, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
+    imagecopyresampled($dest, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+    // }
+
+
+    // Output
+    // imagejpeg($dest, "resized.jpg");
+    $resizedImage = "../images/resizedImage.jpg";
+    if (file_exists($resizedImage)) {
+        unlink($resizedImage);
+    }
+    imagejpeg($dest, $resizedImage);
 }
 
 $content1 = "";
@@ -102,6 +161,18 @@ $menuArray = array(
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+
+    if ($_FILES["image-name"]["tmp_name"] == "") {
+        echo '<script>';
+        echo 'window.location.href = "upload-failed.php"';
+        echo '</script>';
+    }
+
+    $rotateImage = false;
+    if (isset($_POST['rotate']) && $_POST['rotate'] == 'rotate-image') {
+        $rotateImage = true;
+    }
+
     // $numEvents = $_POST["number-of-events"];
     // if (is_numeric($numEvents)) {
     //     $fname = "../resources/number-of-events.php";
@@ -115,7 +186,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     for ($i = 0; $i < count($menuArray); $i++) {
         if ($i == 0) {
-            uploadImage();
+            $imageName = uploadImage();
+            resizeImage($imageName, $rotateImage);
         }
         $entry = $menuArray[$i];
         if (!empty($_POST[$entry[0]])) {
